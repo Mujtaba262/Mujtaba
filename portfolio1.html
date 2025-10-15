@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MK Developer — Frontend Developer Portfolio</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- AOS Animation CSS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #050510;
+      --panel: #0e1020;
+      --muted: #b0b4c2;
+      --accent1: #ff4da6;
+      --accent2: #00e0ff;
+      --accent3: #ffcc00;
+      --radius: 14px;
+      --glow: 0 8px 36px rgba(0,224,255,0.08);
+    }
+
+    body {
+      margin: 0;
+      font-family: "Inter", sans-serif;
+      background: linear-gradient(180deg, var(--bg), #0a0a1f);
+      color: #ffffff;
+      overflow-x: hidden;
+      animation: bgShift 10s infinite alternate ease-in-out;
+    }
+
+    @keyframes bgShift {
+      0% { background: linear-gradient(180deg, #050510, #0a0a1f); }
+      50% { background: linear-gradient(180deg, #0a0a1f, #10102f); }
+      100% { background: linear-gradient(180deg, #10102f, #050510); }
+    }
+
+    /* Navbar */
+    .navbar {
+      background-color: rgba(14, 16, 32, 0.95);
+      box-shadow: var(--glow);
+      animation: navGlow 6s infinite alternate;
+    }
+    @keyframes navGlow {
+      0% { box-shadow: 0 0 20px var(--accent1); }
+      50% { box-shadow: 0 0 20px var(--accent2); }
+      100% { box-shadow: 0 0 20px var(--accent3); }
+    }
+
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      font-weight: 800;
+      color: var(--accent2) !important;
+      animation: colorShift 5s infinite alternate;
+    }
+    .navbar-brand img {
+      width: 45px;
+      height: 45px;
+      border-radius: 10px;
+      margin-right: 8px;
+      box-shadow: 0 0 15px var(--accent2);
+      animation: floatLogo 3s ease-in-out infinite;
+    }
+    @keyframes floatLogo {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+    @keyframes colorShift {
+      0% { color: var(--accent1); }
+      50% { color: var(--accent2); }
+      100% { color: var(--accent3); }
+    }
+
+    .nav-link {
+      color: var(--muted) !important;
+      transition: color 0.3s, transform 0.3s;
+    }
+    .nav-link:hover {
+      color: var(--accent2) !important;
+      transform: scale(1.1);
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 120px 0 60px;
+      text-align: center;
+      animation: fadeIn 1.5s ease-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      background: linear-gradient(90deg, var(--accent1), var(--accent2), var(--accent3));
+      -webkit-background-clip: text;
+      color: transparent;
+      background-size: 300%;
+      animation: gradientText 6s linear infinite;
+    }
+    @keyframes gradientText {
+      0% { background-position: 0%; }
+      100% { background-position: 100%; }
+    }
+
+    .hero p {
+      color: var(--muted);
+      max-width: 700px;
+      margin: 20px auto;
+      animation: fadeIn 2s ease-out;
+    }
+
+    /* Buttons */
+    .btn-primary {
+      background: linear-gradient(90deg, var(--accent1), var(--accent2));
+      border: none;
+      font-weight: 700;
+      color: #060617;
+      transition: transform 0.3s ease, box-shadow 0.3s;
+      animation: pulseGlow 4s infinite alternate;
+    }
+    @keyframes pulseGlow {
+      0% { box-shadow: 0 0 10px var(--accent1); }
+      100% { box-shadow: 0 0 20px var(--accent2); }
+    }
+    .btn-primary:hover {
+      transform: scale(1.05);
+      background: linear-gradient(90deg, var(--accent2), var(--accent1));
+    }
+
+    /* Projects Section */
+    .projects {
+      padding: 80px 0;
+      text-align: center;
+    }
+    .projects h2 {
+      color: var(--accent2);
+      margin-bottom: 40px;
+      animation: colorShift 5s infinite alternate;
+    }
+    .card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius);
+      color: #fff;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      animation: cardGlow 8s infinite alternate;
+    }
+    .card:hover {
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: 0 0 30px var(--accent2);
+    }
+    @keyframes cardGlow {
+      0% { box-shadow: 0 0 15px var(--accent1); }
+      50% { box-shadow: 0 0 15px var(--accent2); }
+      100% { box-shadow: 0 0 15px var(--accent3); }
+    }
+
+    /* Skills */
+    .skills {
+      margin-top: 60px;
+      text-align: left;
+    }
+    .progress-bar {
+      border-radius: 20px;
+      background: linear-gradient(90deg, var(--accent1), var(--accent2), var(--accent3));
+      width: 0;
+      transition: width 2s ease;
+      animation: gradientFlow 4s linear infinite;
+      background-size: 200%;
+    }
+    @keyframes gradientFlow {
+      0% { background-position: 0%; }
+      100% { background-position: 100%; }
+    }
+
+    /* Contact */
+    .contact {
+      padding: 80px 0;
+      background: var(--panel);
+      border-top: 1px solid rgba(255,255,255,0.05);
+      animation: fadeIn 2s ease-in;
+    }
+    .form-control {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: #fff;
+      transition: all 0.3s ease;
+    }
+    .form-control:focus {
+      border-color: var(--accent2);
+      box-shadow: 0 0 15px var(--accent2);
+    }
+
+    footer {
+      padding: 30px 0;
+      background: #08081c;
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+      animation: colorShift 6s infinite alternate;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="#"><img src="https://cdn-icons-png.flaticon.com/512/906/906349.png" alt="MK Logo">MK Developer</a>
+      <button class="navbar-toggler text-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">☰</button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" id="home" data-aos="zoom-in">
+    <div class="container">
+      <h1>Hello, I'm <strong>Mujtaba Khan</strong></h1>
+      <p>Creative Frontend Developer passionate about building responsive, elegant, and animated web experiences using HTML, CSS, JavaScript, and Bootstrap.</p>
+      <div class="d-flex justify-content-center gap-3 mt-4">
+        <a href="#projects" class="btn btn-primary">View My Work</a>
+        <a href="#contact" class="btn btn-outline-light">Hire Me</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section class="projects" id="projects">
+    <div class="container" data-aos="fade-up">
+      <h2>My Featured Projects</h2>
+      <div class="row g-4">
+        <div class="col-md-4" data-aos="flip-left">
+          <div class="card p-3">
+            <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?w=600" alt="Project 1">
+            <h5 class="mt-3">Portfolio UI</h5>
+            <p>Interactive portfolio with smooth animations and responsive design.</p>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="flip-up">
+          <div class="card p-3">
+            <img src="https://images.unsplash.com/photo-1506765515384-028b60a970df?w=600" alt="Project 2">
+            <h5 class="mt-3">Dashboard App</h5>
+            <p>Real-time dashboard created using Bootstrap and Chart.js for analytics.</p>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="flip-right">
+          <div class="card p-3">
+            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600" alt="Project 3">
+            <h5 class="mt-3">E-Commerce Site</h5>
+            <p>Modern e-commerce website with smooth checkout flow and UI polish.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skills Progress Bars -->
+      <div class="skills mt-5">
+        <div class="skill">
+          <div class="skill-name">HTML — 100%</div>
+          <div class="progress"><div class="progress-bar" data-width="100%"></div></div>
+        </div>
+        <div class="skill">
+          <div class="skill-name">CSS — 95%</div>
+          <div class="progress"><div class="progress-bar" data-width="95%"></div></div>
+        </div>
+        <div class="skill">
+          <div class="skill-name">Bootstrap — 94%</div>
+          <div class="progress"><div class="progress-bar" data-width="94%"></div></div>
+        </div>
+        <div class="skill">
+          <div class="skill-name">JavaScript — 70%</div>
+          <div class="progress"><div class="progress-bar" data-width="70%"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact" data-aos="fade-up">
+    <div class="container text-center">
+      <h2>Let's Work Together</h2>
+      <p class="text-muted mb-4">Send me your email and message. I’ll reply as soon as possible!</p>
+
+      <form id="contactForm" class="mx-auto" style="max-width:600px;">
+        <div class="mb-3"><input type="text" class="form-control" id="name" placeholder="Your Name" required></div>
+        <div class="mb-3"><input type="email" class="form-control" id="email" placeholder="Your Email" required></div>
+        <div class="mb-3"><textarea class="form-control" id="message" rows="4" placeholder="Your Message"></textarea></div>
+        <button type="submit" class="btn btn-primary w-100">Send Message</button>
+        <div id="formStatus" class="mt-3 text-muted"></div>
+      </form>
+    </div>
+  </section>
+
+  <footer>© <span id="year"></span> Mujtaba Khan — All Rights Reserved</footer>
+
+  <!-- JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+  <script>
+    AOS.init({ duration: 1000, once: true });
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const bars = document.querySelectorAll(".progress-bar");
+    function animateBars() {
+      bars.forEach(bar => {
+        const rect = bar.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 50 && !bar.classList.contains("animated")) {
+          bar.style.width = bar.dataset.width;
+          bar.classList.add("animated");
+        }
+      });
+    }
+    window.addEventListener("scroll", animateBars);
+
+    const form = document.getElementById('contactForm');
+    const status = document.getElementById('formStatus');
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      status.textContent = "Opening mail app...";
+      const nameVal = name.value.trim();
+      const emailVal = email.value.trim();
+      const messageVal = message.value.trim();
+      const myEmail = "mk8063045@gmail.com";
+      const subject = encodeURIComponent("Portfolio Contact from " + nameVal);
+      const body = encodeURIComponent(`Name: ${nameVal}\nEmail: ${emailVal}\nMessage:\n${messageVal}`);
+      window.location.href = `mailto:${myEmail}?subject=${subject}&body=${body}`;
+    });
+  </script>
+</body>
+</html>
