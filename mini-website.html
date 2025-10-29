@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nature</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        .image{
+            height: 7vh;
+            border-radius: 50%;
+        }
+        .nav-item{
+            font-family: 'Times New Roman', Times, serif;
+            
+        }
+         .card img {
+      height: 200px;           /* uniform image height */
+      object-fit: cover;       /* image crop nicely */
+    }
+    .carousel-img {
+  height: 700px; /* Change height as you like */
+  object-fit: cover; /* Makes image crop nicely without stretching */
+}
+ footer {
+      background-color: #1a1a1a;
+      color: #ddd;
+    }
+
+    footer h6 {
+      color: #fff;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    footer a {
+      color: #bbb;
+      text-decoration: none;
+      position: relative;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    /* Hover underline animation */
+    footer a::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -2px;
+      left: 0;
+      background-color: #0d6efd;
+      transition: width 0.3s ease;
+    }
+
+    footer a:hover {
+      color: #0d6efd;
+      transform: translateX(3px);
+    }
+
+    footer a:hover::after {
+      width: 100%;
+    }
+
+    /* Social Icons */
+    .social-icons a {
+      color: #fff;
+      font-size: 18px;
+      margin-right: 15px;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      color: #0d6efd;
+      transform: scale(1.2) rotate(10deg);
+    }
+
+    /* Footer bottom line */
+    .footer-bottom {
+      background-color: #111;
+      color: #aaa;
+    }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark py-4 sticky-top">
+  <div class="container-fluid">
+   <img src="https://w0.peakpx.com/wallpaper/931/220/HD-wallpaper-michael-kors-logo-designer-handbag-michael-kors-mk.jpg" class="image" alt="no found">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mynavbar">
+      <ul class="navbar-nav me-auto fw-bold px-3 fs-5">
+        <li class="nav-item">
+          <a class="nav-link" href="javascript:void(0)">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="javascript:void(0)">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="javascript:void(0)">Contat Us</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="text" placeholder="Search">
+        <button class="btn btn-warning" type="button">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+            <!-- Carousel -->
+<div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+  <!-- Bootstrap Carousel -->
+<div id="demo" class="carousel slide" data-bs-ride="carousel" data-bs-interval="1500">
+  <!-- Indicators/dots -->
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+  </div>
+
+  <!-- The slideshow/carousel -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://www.bigfootdigital.co.uk/wp-content/uploads/2020/07/image-optimisation-scaled.jpg" alt="Los Angeles" class="d-block w-100 carousel-img">
+    </div>
+    <div class="carousel-item">
+      <img src="https://www.shutterstock.com/shutterstock/photos/2198009967/display_1500/stock-photo-autumn-forest-path-orange-color-tree-red-brown-maple-leaves-in-fall-city-park-nature-scene-in-2198009967.jpg" alt="Chicago" class="d-block w-100 carousel-img">
+    </div>
+    <div class="carousel-item">
+      <img src="https://images.unsplash.com/photo-1575936123452-b67c3203c357?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE3fHx8ZW58MHx8fHx8" alt="New York" class="d-block w-100 carousel-img">
+    </div>
+  </div>
+
+  <!-- Left and right controls/icons -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+
+
+<div class="container my-5">
+  <div class="row g-4"> <!-- g-4 gives space between cards -->
+    <!-- Card 1 -->
+    <div class="col-12 col-sm-6 col-md-4">
+      <div class="card shadow-sm h-100">
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb" class="card-img-top" alt="Nature Image">
+        <div class="card-body">
+          <h5 class="card-title">Beautiful Nature</h5>
+          <p class="card-text">This is a responsive Bootstrap card. It adjusts automatically on every screen.</p>
+          <a href="#" class="btn btn-primary btn-sm">Read More</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="col-12 col-sm-6 col-md-4">
+      <div class="card shadow-sm h-100">
+        <img src="https://cdn.pixabay.com/photo/2023/10/24/16/57/plant-8338691_640.jpg" class="card-img-top" alt="Nature Image">
+        <div class="card-body">
+          <h5 class="card-title">Beautiful Nature</h5>
+          <p class="card-text">It shows images and text beautifully on all devices.</p>
+          <a href="#" class="btn btn-primary btn-sm">Read More</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="col-12 col-sm-6 col-md-4">
+      <div class="card shadow-sm h-100">
+        <img src="https://cdn.pixabay.com/photo/2018/04/15/00/17/leaf-3320556_1280.jpg" class="card-img-top" alt="Nature Image">
+        <div class="card-body">
+          <h5 class="card-title">Beautiful Nature</h5>
+          <p class="card-text">Responsive and clean — looks great on mobile too.</p>
+          <a href="#" class="btn btn-primary btn-sm">Read More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container my-5">
+  <div class="row g-4"> <!-- g-4 gives space between cards -->
+    <!-- Card 1 -->
+    <div class="col-12 col-sm-6 col-md-4">
+      <div class="card shadow-sm h-100">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwKlSLJAo0aTPhOGHdbHPORAD_Bued6iuBkw&s" class="card-img-top" alt="Nature Image">
+        <div class="card-body">
+          <h5 class="card-title">Beautiful Nature</h5>
+          <p class="card-text">This is a responsive Bootstrap card. It adjusts automatically on every screen.</p>
+          <a href="#" class="btn btn-primary btn-sm">Read More</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="col-12 col-sm-6 col-md-4">
+      <div class="card shadow-sm h-100">
+        <img src="https://media.istockphoto.com/id/1450268558/photo/summer-selfie.jpg?s=612x612&w=0&k=20&c=IivGQIXV7pCu_tr10I0kaDouUtIi_pKzOrqB_NAGoCA=" class="card-img-top" alt="Nature Image">
+        <div class="card-body">
+          <h5 class="card-title">Beautiful Nature</h5>
+          <p class="card-text">It shows images and text beautifully on all devices.</p>
+          <a href="#" class="btn btn-primary btn-sm">Read More</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="col-12 col-sm-6 col-md-4">
+      <div class="card shadow-sm h-100">
+        <img src="https://i0.wp.com/picjumbo.com/wp-content/uploads/amazing-stone-path-in-forest-free-image.jpg?w=600&quality=80" class="card-img-top" alt="Nature Image">
+        <div class="card-body">
+          <h5 class="card-title">Beautiful Nature</h5>
+          <p class="card-text">Responsive and clean — looks great on mobile too.</p>
+          <a href="#" class="btn btn-primary btn-sm">Read More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <footer class="text-center text-lg-start text-muted pt-4">
+  <!-- Section: Social media -->
+  <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom border-secondary">
+    <!-- Left -->
+    <div class="me-5 d-none d-lg-block text-light">
+      <span>🌐 Get connected with us on social networks:</span>
+    </div>
+
+    <!-- Right -->
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-google"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+      <a href="#"><i class="fab fa-github"></i></a>
+    </div>
+  </section>
+
+  <!-- Section: Links  -->
+  <section class="py-4">
+    <div class="container text-center text-md-start mt-4">
+      <div class="row mt-3">
+        <!-- Company Info -->
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <h6 class="fw-bold mb-4"><i class="fas fa-gem me-2 text-primary"></i>Mujtaba khan</h6>
+          <p>
+            Welcome to our creative space! We share the latest designs, code ideas, and tutorials for developers and designers alike.
+          </p>
+        </div>
+
+        <!-- Products -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <h6 class="fw-bold mb-4">Products</h6>
+          <p><a href="#">HTML Templates</a></p>
+          <p><a href="#">Bootstrap Themes</a></p>
+          <p><a href="#">UI Kits</a></p>
+          <p><a href="#">WordPress</a></p>
+        </div>
+
+        <!-- Useful Links -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+          <h6 class="fw-bold mb-4">Useful Links</h6>
+          <p><a href="#">Pricing</a></p>
+          <p><a href="#">Settings</a></p>
+          <p><a href="#">Orders</a></p>
+          <p><a href="#">Help</a></p>
+        </div>
+
+        <!-- Contact -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          <h6 class="fw-bold mb-4">Contact</h6>
+          <p><i class="fas fa-home me-2 text-primary"></i> Sukkur, Pakistan</p>
+          <p><i class="fas fa-envelope me-2 text-primary"></i> infomujtaba.com</p>
+          <p><i class="fas fa-phone me-2 text-primary"></i> +92 300 1234567</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Copyright -->
+  <div class="footer-bottom text-center p-3">
+    © 2025 MyWebsite.com — All Rights Reserved
+  </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
